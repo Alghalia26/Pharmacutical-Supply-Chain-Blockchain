@@ -1,0 +1,55 @@
+test:
+  name: getHistory-function-benchmark
+  description: Function-level benchmark for getHistoryForBatch
+
+  workers:
+    number: 5
+
+  rounds:
+    - label: history-very-low
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 5 }
+      workload:
+        module: workload/getHistoryWorkload.js
+
+    - label: history-low
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 10 }
+      workload:
+        module: workload/getHistoryWorkload.js
+
+    - label: history-medium
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 20 }
+      workload:
+        module: workload/getHistoryWorkload.js
+
+    - label: history-high
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 30 }
+      workload:
+        module: workload/getHistoryWorkload.js
+
+    - label: history-very-high
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 40 }
+      workload:
+        module: workload/getHistoryWorkload.js
+
+    - label: history-extreme
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 50 }
+      workload:
+        module: workload/getHistoryWorkload.js

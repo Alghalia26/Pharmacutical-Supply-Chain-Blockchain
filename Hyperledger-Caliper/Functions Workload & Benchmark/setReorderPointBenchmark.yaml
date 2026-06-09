@@ -1,0 +1,55 @@
+test:
+  name: setReorderPoint-function-benchmark
+  description: Function-level benchmark for setReorderPoint
+
+  workers:
+    number: 5
+
+  rounds:
+    - label: reorder-very-low
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 5 }
+      workload:
+        module: workload/setReorderPointWorkload.js
+
+    - label: reorder-low
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 10 }
+      workload:
+        module: workload/setReorderPointWorkload.js
+
+    - label: reorder-medium
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 20 }
+      workload:
+        module: workload/setReorderPointWorkload.js
+
+    - label: reorder-high
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 30 }
+      workload:
+        module: workload/setReorderPointWorkload.js
+
+    - label: reorder-very-high
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 40 }
+      workload:
+        module: workload/setReorderPointWorkload.js
+
+    - label: reorder-extreme
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 50 }
+      workload:
+        module: workload/setReorderPointWorkload.js

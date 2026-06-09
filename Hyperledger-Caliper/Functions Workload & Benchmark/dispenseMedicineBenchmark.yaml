@@ -1,0 +1,56 @@
+test:
+  name: dispenseMedicine-function-benchmark
+  description: Function-level benchmark for dispenseMedicine
+
+  workers:
+    number: 5
+
+  rounds:
+    - label: dispense-very-low
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 5 }
+      workload:
+        module: workload/dispenseMedicineWorkload.js
+
+    - label: dispense-low
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 10 }
+      workload:
+        module: workload/dispenseMedicineWorkload.js
+
+    - label: dispense-medium
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 20 }
+      workload:
+        module: workload/dispenseMedicineWorkload.js
+
+    - label: dispense-high
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 30 }
+      workload:
+        module: workload/dispenseMedicineWorkload.js
+
+    - label: dispense-very-high
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 40 }
+      workload:
+        module: workload/dispenseMedicineWorkload.js
+
+    - label: dispense-extreme
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 50 }
+      workload:
+        module: workload/dispenseMedicineWorkload.js
+

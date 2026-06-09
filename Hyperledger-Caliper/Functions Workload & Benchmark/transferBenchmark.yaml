@@ -1,0 +1,55 @@
+test:
+  name: transfer-function-benchmark
+  description: Function-level benchmark for transferBatch
+
+  workers:
+    number: 5
+
+  rounds:
+    - label: transfer-very-low
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 5 }
+      workload:
+        module: workload/transferBatchWorkload.js
+
+    - label: transfer-low
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 10 }
+      workload:
+        module: workload/transferBatchWorkload.js
+
+    - label: transfer-medium
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 20 }
+      workload:
+        module: workload/transferBatchWorkload.js
+
+    - label: transfer-high
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 30 }
+      workload:
+        module: workload/transferBatchWorkload.js
+
+    - label: transfer-very-high
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 40 }
+      workload:
+        module: workload/transferBatchWorkload.js
+
+    - label: transfer-extreme
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts: { tps: 50 }
+      workload:
+        module: workload/transferBatchWorkload.js
