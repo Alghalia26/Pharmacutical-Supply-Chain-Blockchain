@@ -1,0 +1,63 @@
+name: "fabric-network"
+version: "1.0"
+
+clients:
+ client1:
+   organization: ShippingOrg1
+organizations:
+ ShippingOrg1:
+   mspid: ShippingOrg1MSP
+   peers:
+     - peer0.shipping.example.com
+ DistributorOrg2:
+   mspid: DistributorOrg2MSP
+   peers:
+     - peer0.distributor.example.com
+ PharmacyOrg3:
+   mspid: PharmacyOrg3MSP
+   peers:
+     - peer0.pharmacy.example.com
+peers:
+peer0.shipping.example.com:
+   url: grpcs://localhost:7051
+   tlsCACerts:
+     path: ../artifacts/channel/crypto-config/peerOrganizations/shipping.example.com/peers/peer0.shipping.example.com/tls/ca.crt
+peer0.distributor.example.com:
+   url: grpcs://localhost:9051
+   tlsCACerts:
+     path: ../artifacts/channel/crypto-config/peerOrganizations/distributor.example.com/peers/peer0.distributor.example.com/tls/ca.crt
+peer0.pharmacy.example.com:
+   url: grpcs://localhost:11051
+   tlsCACerts:
+     path: ../artifacts/channel/crypto-config/peerOrganizations/pharmacy.example.com/peers/peer0.pharmacy.example.com/tls/ca.crt
+orderers:
+orderer.example.com:
+   url: grpcs://localhost:7050
+   tlsCACerts:
+     path: ../artifacts/channel/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt
+channels:
+ mychannel:
+   orderers:
+     - orderer.example.com
+   peers:
+peer0.shipping.example.com:
+       endorsingPeer: true
+       chaincodeQuery: true
+       ledgerQuery: true
+       eventSource: true
+peer0.distributor.example.com:
+       endorsingPeer: true
+       chaincodeQuery: true
+       ledgerQuery: true
+       eventSource: true
+peer0.pharmacy.example.com:
+       endorsingPeer: true
+       chaincodeQuery: true
+       ledgerQuery: true
+       eventSource: true
+
+
+
+
+
+
