@@ -1,0 +1,200 @@
+test:
+  name: pharmachain-scenario-benchmark
+  description: Scenario-based performance testing for pharmaceutical supply chain
+
+  workers:
+    number: 5
+
+  rounds:
+
+    # Scenario 1: End-to-End Traceability
+    - label: S1-traceability-very-low
+      description: Traceability scenario under very low load
+      txNumber: 200
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 5
+      workload:
+        module: workload/traceabilityScenario.js
+
+    - label: S1-traceability-low
+      description: Traceability scenario under low load
+      txNumber: 400
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/traceabilityScenario.js
+
+    - label: S1-traceability-medium
+      description: Traceability scenario under medium load
+      txNumber: 800
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 20
+      workload:
+        module: workload/traceabilityScenario.js
+
+    - label: S1-traceability-high
+      description: Traceability scenario under high load
+      txNumber: 1200
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 30
+      workload:
+        module: workload/traceabilityScenario.js
+
+    - label: S1-traceability-very-high
+      description: Traceability scenario under very high load
+      txNumber: 1600
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 40
+      workload:
+        module: workload/traceabilityScenario.js
+
+    - label: S1-traceability-extreme
+      description: Traceability scenario under extreme load
+      txNumber: 2000
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: workload/traceabilityScenario.js
+
+
+    # Scenario 2: Temperature Monitoring
+    - label: S2-temperature-very-low
+      description: Temperature monitoring scenario under very low load
+      txNumber: 200
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 5
+      workload:
+        module: workload/temperatureScenario.js
+
+    - label: S2-temperature-low
+      description: Temperature monitoring scenario under low load
+      txNumber: 400
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/temperatureScenario.js
+
+    - label: S2-temperature-medium
+      description: Temperature monitoring scenario under medium load
+      txNumber: 800
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 20
+      workload:
+        module: workload/temperatureScenario.js
+
+    - label: S2-temperature-high
+      description: Temperature monitoring scenario under high load
+      txNumber: 1200
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 30
+      workload:
+        module: workload/temperatureScenario.js
+
+    - label: S2-temperature-very-high
+      description: Temperature monitoring scenario under very high load
+      txNumber: 1600
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 40
+      workload:
+        module: workload/temperatureScenario.js
+
+    - label: S2-temperature-extreme
+      description: Temperature monitoring scenario under extreme load
+      txNumber: 2000
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: workload/temperatureScenario.js
+
+
+    # Scenario 3: Pharmacy Stock Control
+    - label: S3-stock-very-low
+      description: Pharmacy stock control scenario under very low load
+      txNumber: 200
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 5
+      workload:
+        module: workload/pharmacyStockScenario.js
+
+    - label: S3-stock-low
+      description: Pharmacy stock control scenario under low load
+      txNumber: 400
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 10
+      workload:
+        module: workload/pharmacyStockScenario.js
+
+    - label: S3-stock-medium
+      description: Pharmacy stock control scenario under medium load
+      txNumber: 800
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 20
+      workload:
+        module: workload/pharmacyStockScenario.js
+
+    - label: S3-stock-high
+      description: Pharmacy stock control scenario under high load
+      txNumber: 1200
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 30
+      workload:
+        module: workload/pharmacyStockScenario.js
+
+    - label: S3-stock-very-high
+      description: Pharmacy stock control scenario under very high load
+      txNumber: 1600
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 40
+      workload:
+        module: workload/pharmacyStockScenario.js
+
+    - label: S3-stock-extreme
+      description: Pharmacy stock control scenario under extreme load
+      txNumber: 2000
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: workload/pharmacyStockScenario.js
+
+
+
+
+
+
+
